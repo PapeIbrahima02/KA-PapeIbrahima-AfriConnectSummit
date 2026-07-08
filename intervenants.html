@@ -5,12 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intervenants</title>
 
+    <!--Bootstrap icon  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Votre feuille de style personnelle -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   
+   <header>
+    <nav>
+        <a href="index.html"><img src="images/logo_AfriTalent-removebg.png" alt="">
+            AfriConnect Summit
+        </a>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programme.html">programme</a></li>
+            <li><a href="intervenants.html">Intervenants</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button>
+            <i class="bi bi-moon-fill"></i>
+        </button>
+    </nav>
+   </header>
+
+
+   <!-- Contenu principal -->
+    <main>
+        <!-- Section Hero -->
+        <section>
+            <div>
+                <h1>Découvrez les intervenants d'AfriConnect Summit 2026</h1>
+                <p>
+                    <a href="index.html">Accueil</a> > intervenants
+                </p>
+            </div>
+        </section>
+
+        <!-- Section INTERVENANTS -->
+        <section>
+            <!-- FILTRAGE DYNAMIQUE -->
+            <select name="filtre" id="filtre" class="btn btn-success">
+                <option value="tous">Tous</option>
+                <option value="IA">IA & Tech</option>
+                <option value="business">Business</option>
+                <option value="design">Design</option>
+                <option value="data">Data</option>
+            </select>
+
+            <!-- Grille de profits -->
+            <div>
+                <article data-categorie="IA">
+                    <img src="images/Amadou_Diallo.jpg" alt="Amina Diop">
+                    <h3>Amina Diop</h3>
+                    <p>Intelligence Artificielle</p>
+                    <strong>Sénégal</strong>
+                </article>
+
+                <article data-categorie="IA">
+                    <img src="images/Amadou_Diallo.jpg" alt="Samuel Okoye">
+                    <h3>Samuel Okoye</h3>
+                    <p>Machine Learning Engineer</p>
+                    <strong>Nigeria</strong>
+                </article>
+
+                <article data-categorie="business">
+                    <img src="images/Amadou_Diallo.jpg" alt="Koffi Mensah">
+                    <h3>Koffi Mensah</h3>
+                    <p>CEO – TechNova Africa</p>
+                    <strong>Ghana</strong>
+                </article>
+
+                <article data-categorie="business">
+                    <img src="images/Amadou_Diallo.jpg" alt="Fatou Ndiaye">
+                    <h3>Fatou Ndiaye</h3>
+                    <p>Entrepreneure Tech</p>
+                    <strong>Sénégal</strong>
+                </article>
+
+                <article data-categorie="design">
+                    <img src="images/Amadou_Diallo.jpg" alt="Nadia Benali">
+                    <h3>Nadia Benali</h3>
+                    <p>UX/UI Designer</p>
+                    <strong>Maroc</strong>
+                </article>
+
+                <article data-categorie="design">
+                    <img src="images/Amadou_Diallo.jpg" alt="Grace Njeri">
+                    <h3>Grace Njeri</h3>
+                    <p>Product Designer</p>
+                    <strong>Kenya</strong>
+                </article>
+
+                <article data-categorie="data">
+                    <img src="images/Amadou_Diallo.jpg" alt="Jean-Claude Mukendi">
+                    <h3>Jean-Claude Mukendi</h3>
+                    <p>Data Scientist</p>
+                    <strong>RD Congo</strong>
+                </article>
+
+                <article data-categorie="data">
+                    <img src="images/Amadou_Diallo.jpg" alt="Ahmed Hassan">
+                    <h3>Ahmed Hassan</h3>
+                    <p>Cloud & Data Engineer</p>
+                    <strong>Égypte</strong>
+                </article>
+
+                <article data-categorie="IA">
+                    <img src="images/Amadou_Diallo.jpg" alt="Chinedu Obi">
+                    <h3>Chinedu Obi</h3>
+                    <p>Développeur Full Stack</p>
+                    <strong>Nigeria</strong>
+                </article>
+            </div>
+        </section>
+
+    </main>
     
+
+    <footer>
+        <div>
+            <div>
+                <div>
+                    <h3>AfriConnect Summit</h3>
+                    <p>AfriConnect Summit est une conférence panafricaine dédiée à l'innovation, au numérique et à l'entrepreneuriat.</p>
+                    <img src="images/logo_AfriTalent-removebg.png" alt="">
+                </div>
+
+                <div>
+                    <h3>Liens utiles</h3>
+                    <ul >
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="intervenants.html">Intervenants</a></li>
+                        <li><a href="contact.html">ontact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Contact</h3>
+                    <p>Email : contact@afriSummit.com</p>
+                    <p>Tel : +221 77 210 22 99</p>
+                </div>
+            </div>
+
+            <div>
+                <a href="http://www.facebook.com"><i class="bi bi-facebook"></i></a>
+                <a href="http://www.instagram.com"><i class="bi bi-instagram"></i></a>
+                <a href="http://www.linkedin.com"><i class="bi bi-linkedin"></i></a>
+            </div> 
+
+            <div class="text-center py-4">
+                <p>&copy; 2026 AfriConnect Summit. Tous droits réservés</p>
+            </div>
+            <!-- Bouton retour en haut -->
+            <button id="btn-Top">
+                <i class="bi bi-arrow-up-short"></i>
+            </button>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>

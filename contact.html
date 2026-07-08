@@ -3,14 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Inscription & Contact</title>
 
+    <!--Bootstrap icon  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Votre feuille de style personnelle -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   
+   <header>
+    <nav>
+        <a href="index.html"><img src="images/logo_AfriTalent-removebg.png" alt="">
+            AfriConnect Summit
+        </a>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programme.html">programme</a></li>
+            <li><a href="intervenants.html">Intervenants</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button>
+            <i class="bi bi-moon-fill"></i>
+        </button>
+    </nav>
+   </header>
+
+   <!-- Contenu principal -->
+    <main>
+        <!-- Section Hero -->
+        <section>
+            <div>
+                <h1>Inscrivez-vous à AfriConnect Summit 2026</h1>
+                <p>
+                    <a href="index.html">Accueil</a> > Contact
+                </p>
+            </div>
+        </section>
+
+        <!-- Section FORMULAIRE -->
+        <section>
+            <div>
+                <form action="" method="">
+                    <div class="div-form">
+                        <label for="nom">Nom & Prenom :</label>
+                        <input type="text" id="nom">
+                        <span class="erreur" id="nomPrenomErreur"></span>
+                    </div>
+                    <div class="div-form">
+                        <label for="mail">Mail :</label>
+                        <input type="email" id="mail">
+                        <span class="erreur" id="mailErreur"></span>
+                    </div>
+                    <div class="div-form">
+                        <label for="telephone">Telephone :</label>
+                        <input type="tel" name="telephone" id="telephone">
+                        <span class="erreur" id="telErreur"></span>
+                    </div>
+                    <div class="div-form">
+                        <label for="pays">Pays</label>
+                        <select name="pays" id="pays">
+                            <option value="Senegal">Senegal</option>
+                            <option value="Maroc">Maroc</option>
+                            <option value="Egypte">Egypte</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Congo">RD Congo</option>
+                            <option value="Ethiopie">Ethiopie</option>
+                            <option value="Mali">Mali</option>
+                            <option value="Guinee">Guinee</option>
+                            <option value="Gambie">Gambie</option>
+                            <option value="Cote d'ivoire">Cote d'ivoire</option>
+                            <option value="Rwanda">Rwanda</option>
+                        </select>
+                        <span class="erreur" id="paysErreur"></span>
+                    </div>
+                    <div class="div-form">
+                        <label for="message">Message :</label>
+                        <textarea name="message" id="message" rows="6" cols="35"></textarea>
+                        <span class="erreur" id="messageErreur"></span>
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+                <div id="confirmation" class="success"></div>
+
+            </div>
+            <div id="div-contact">  
+                <h2>Contact</h2>
+                <p><i class="bi bi-geo-alt"></i>Dakar, Senegal</p>
+                <p><i class="bi bi-telephone"></i>+221 77 171 19 99</p>
+                <p><i class="bi bi-envelope"></i>Contact@saveursdafrique.sn</p>
+            </div>
+        </section>
+
+        <!-- Section FAQ -->
+        <section>
+            <h2>FAQ</h2>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq1">
+                <label for="faq1">
+                    Comment puis-je m'inscrire à AfriConnect Summit ?
+                </label>
+
+                <div class="faq-content">
+                    <p>
+                        L'inscription se fait directement via le formulaire disponible sur cette
+                        page. Une confirmation vous sera envoyée après validation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq2">
+                <label for="faq1">
+                    La participation à la conférence est-elle payante ?
+                </label>
+                
+                <div class="faq-content">
+                    <p>
+                        Plusieurs formules sont proposées, notamment un accès standard, un accès premium et 
+                        un pass étudiant. Les détails seront communiqués après l'inscription.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq3">
+                <label for="faq1">
+                    Où se déroulera l'événement ?
+                </label>
+                
+                <div class="faq-content">
+                    <p>
+                        AfriConnect Summit 2026 se tiendra à Dakar, au Sénégal, du 20 au 22 novembre 2026.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq4">
+                <label for="faq1">
+                    Qui peut participer à la conférence ?
+                </label>
+                
+                <div class="faq-content">
+                    <p>
+                        La conférence est ouverte aux étudiants, développeurs, entrepreneurs, chercheurs, 
+                        investisseurs et à toute personne intéressée par les technologies et l'innovation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq5">
+                <label for="faq1">
+                    Recevrai-je un certificat de participation ?
+                </label>
+                
+                <div class="faq-content">
+                    <p>
+                        Oui. Tous les participants présents durant l'événement recevront un certificat 
+                        de participation à la clôture de la conférence.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section iframe -->
+        <section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.5187823338842!2d-17.200932724891157!3d14.739777385763217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec19feb37b00737%3A0xcc39a5adb92c7ea7!2sCentre%20des%20Expositions%20a%20Diamniadio%20(C.I.C.A.D)!5e0!3m2!1sfr!2ssn!4v1783547538819!5m2!1sfr!2ssn" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </section>
+
+    </main>
     
+
+    <footer>
+        <div>
+            <div>
+                <div>
+                    <h3>AfriConnect Summit</h3>
+                    <p>AfriConnect Summit est une conférence panafricaine dédiée à l'innovation, au numérique et à l'entrepreneuriat.</p>
+                    <img src="images/logo_AfriTalent-removebg.png" alt="">
+                </div>
+
+                <div>
+                    <h3>Liens utiles</h3>
+                    <ul >
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="intervenants.html">Intervenants</a></li>
+                        <li><a href="contact.html">ontact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Contact</h3>
+                    <p>Email : contact@afriSummit.com</p>
+                    <p>Tel : +221 77 210 22 99</p>
+                </div>
+            </div>
+
+            <div>
+                <a href="http://www.facebook.com"><i class="bi bi-facebook"></i></a>
+                <a href="http://www.instagram.com"><i class="bi bi-instagram"></i></a>
+                <a href="http://www.linkedin.com"><i class="bi bi-linkedin"></i></a>
+            </div> 
+
+            <div class="text-center py-4">
+                <p>&copy; 2026 AfriConnect Summit. Tous droits réservés</p>
+            </div>
+            <!-- Bouton retour en haut -->
+            <button id="btn-Top">
+                <i class="bi bi-arrow-up-short"></i>
+            </button>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>
