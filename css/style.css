@@ -1,0 +1,918 @@
+/* ====== Variables ====== */
+:root{
+    /* Couleurs */
+    --primary-color:#3A1D6C;        /*Couleur principale*/
+    --secondary-color:#E5DCF9;      /*Couleur secondaire*/
+    --background-color:#F2EEFC;      /*Couleur de fond*/
+    --carte-color:#FFFFFF;            /*Couleur des cartes*/
+    --text-color:#1F2937;            /*Couleur paragraphe*/
+    --dark-color:#1E1238;            /*Couleur footer*/
+
+    /* TYPOGRAPHIE */
+    --title-font:"Poppins", sans-serif;
+    --text-font:"Roboto", sans-serif;
+
+    /* ESPACEMENTS */
+    --gap:1rem;  
+
+    /* Border Radius */
+    --radius-md:10px;
+    --radius-lg:20px;
+    --radius-xl:30px;
+}
+
+/* ===== Variables du mode sombre ===== */
+[data-theme="dark"]{
+    --primary-color:#8B5CF6;      
+    --secondary-color:#3C2D63;    
+    --background-color:#12101C;   
+    --card-color:#1E1830;         
+    --text-color:#F8FAFC;         
+}
+
+/*==== Reset + base ====*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;         /* Les bordures et paddings sont inclus dans la taille de l'element */
+}
+body{
+    background-color: var(--background-color);
+}
+h1, h2, h3{
+    font-family: var(--title-font);
+}
+p{
+    font-family: var(--text-font);
+    color: var(--text-color);
+}
+
+/* ==== Navbar ====*/
+nav{
+    padding-bottom: 3rem;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 5rem 0.5rem 5rem;
+    position: fixed;
+    z-index: 999;
+    background-color: var(--background-color);
+    width: 100%;
+}
+.logo{
+    display: flex;
+    gap: var(--gap);
+}
+.navbar img{
+    height: 3rem;
+}
+.logo a{
+    padding-top: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    list-style: none;
+    padding: 1rem 13rem 1rem 0;
+}
+.menu li a{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    transition: color 0.5s ease;
+    transition: background-color 0.5s ease;
+}
+.menu li a:hover{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border-radius: var(--radius-md);
+}
+.btn-dark{
+    position: fixed;
+    top: 20px;
+    right: 5rem;
+    z-index: 999;
+    padding: 0.3rem 0.5rem;
+    border-radius: var(--radius-md);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+.menu-burger{
+    position: fixed;
+    top: 20px;
+    right: 2rem;
+    z-index: 999;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;      /* Pour cacher l'icone */
+}
+
+
+/* ======== Page 1 Accueil ======== */
+/* Section Hero */
+#hero-accueil{
+    min-height: 100vh;
+    padding: 5rem 0;
+}
+#hero-style{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5rem;
+    
+}
+.titre{
+    margin-top: 1rem;
+    padding-right: 8rem;
+}
+.titre h1{
+    color: var(--primary-color);
+    font-size: 3.5rem;
+}
+.titre h2{
+    padding-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.7rem;
+}
+#btn-hero{
+    padding-top: 1rem;
+}
+#btn-hero #btn1{
+    padding: 10px;
+    background-color: var(--primary-color);
+    margin-right: 3px;
+    border-radius: var(--radius-md);
+    border: none;
+}
+#btn-hero #btn2{
+    padding: 10px;
+    margin-left: 3px;
+    border-radius: var(--radius-md);
+    border-color: var(--primary-color);
+    transition: background-color 0.5s ease;
+}
+#btn-hero #btn2:hover{
+    background-color: var(--primary-color);
+    border: none;
+    
+}
+#btn-hero #btn1 a{
+    text-decoration: none;
+    color: var(--carte-color);
+}
+#btn-hero #btn2 a{
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.5s ease;
+}
+#btn-hero #btn2 a:hover{
+    color: var(--carte-color);
+}
+#hero-style img{
+    width: 40%;
+}
+#compte-rebour{
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    margin: 5rem 15rem 0 15rem;
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius-md);
+}
+#compte-rebour div h3{
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+#compte-rebour div p{
+    font-weight: bold;
+}
+
+/* Section Chiffre cles */
+#chiffre{
+    padding: 5rem 0;
+    margin: 0 10rem;
+}
+#titre-chiffre h2{
+    padding-bottom: 1rem;
+}
+#titre-chiffre{
+    text-align: center;
+}
+#chiffre-cles{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    /*Colonne adaptative*/
+    gap: 1rem;
+    margin-top: 5rem;
+}
+#chiffre1{
+    grid-row: 1;
+    grid-column: 1/3;
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 5rem 0;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--primary-color);
+}
+#chiffre2{
+    grid-row: 1;
+    grid-column: 3;
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 5rem 0;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--primary-color);
+}
+#chiffre3{
+    grid-row: 2;
+    grid-column: 1;
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 5rem 0;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--primary-color);
+}
+#chiffre4{
+    grid-row: 2;
+    grid-column: 2/4;
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 5rem 0;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--primary-color);
+}
+#chiffre1 h3, #chiffre2 h3, #chiffre3 h3, #chiffre4 h3{
+    color: var(--primary-color);
+}
+
+/* SECTION  POURQUOI PARTICIPER */
+#Pourquoi{
+    padding: 5rem 0;
+    margin: 0 7rem;
+}
+#Pourquoi h2{
+    text-align: center;
+}
+#container-pourquoi{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 5rem;
+}
+.fils-pourquoi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    line-height: 1.7rem;
+}
+.fils-pourquoi i{
+    font-size: 2rem;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+}
+
+/* SECTION INTERVENANTS */
+#intervenant{
+    padding: 5rem 0;
+    /* margin: 0 10rem; */
+    background-color: var(--secondary-color);
+}
+#titre-intervenant{
+    text-align: center;
+}
+#titre-intervenant p{
+    padding: 1rem 20rem;
+    line-height: 1.7rem;
+}
+#intervenant-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    /*Colonne adaptative*/
+    margin: 0 5rem;
+    gap: 1.5rem;
+}
+.card-intrvnt{
+    text-align: center;
+    background-color: var(--carte-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1.5px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    transition: transform 0.5s ease ;
+}
+.card-intrvnt:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--primary-color);
+}
+.card-intrvnt img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.card-intrvnt strong{
+    /* color: var(--primary-color); */
+}
+#btn-intrvnt{
+    margin: 5rem 0 0 33rem;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-radius: var(--radius-md);
+    border: none;
+    transition: transform 1s ease ;
+}
+#btn-intrvnt a{
+    text-decoration: none;
+    color: var(--carte-color);
+}
+#btn-intrvnt:hover{
+    padding: 1rem 0.5rem;
+    transform: translateY(10px);
+}
+
+/* Section Nos sponsors */
+#sponsor{
+    padding: 5rem 0;
+}
+#titre-sponsor{
+    text-align: center;
+}
+#titre-sponsor p{
+    padding: 0 25rem;
+    margin-top: 1rem;
+    line-height: 1.7;
+}
+.sponsor h3{
+    text-align: center;
+    margin: 4rem 0 2rem 0;
+}
+#sponsor-or{
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+}
+#sponsor-or img{
+    width: 23%;
+}
+#sponsor-argent{
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+}
+#sponsor-argent img{
+    width: 15%;
+}
+#sponsor-bronze{
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+}
+#sponsor-bronze img{
+    width: 10%;
+}
+
+/* Footer */
+footer{
+    background-color: var(--dark-color);
+    padding: 5rem 5rem 0 5rem ;
+    color: var(--primary-color);
+}
+#infos{
+    display: flex;
+    justify-content: space-between;
+}
+#infos img{
+    width: 25%;
+}
+#description{
+    padding-right: 15rem;
+}
+#description p{
+    color: var(--carte-color);
+    line-height: 1.7rem;
+    padding-top: 1rem;
+}
+#lien ul{
+    list-style: none;
+    padding-top: 1rem;
+}
+#lien ul li a{
+    text-decoration: none;
+    color: var(--carte-color);
+    transition: color 0.5s ease;
+}
+#lien ul li a:hover{
+    color: var(--primary-color);
+}
+#contact{
+    margin-left: 20rem;
+}
+#contact p{
+    color: var(--carte-color);
+    line-height: 1.7rem;
+    padding-top: 1rem;
+    transition: color 0.5s ease;
+}
+#contact p:hover{
+    color: var(--primary-color);
+}
+#reseau{
+    padding: 1rem 0;
+}
+#reseau i{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    background-color: var(--carte-color);
+    padding: 5px;
+    border-radius: var(--radius-md);
+    margin-right: 5px;
+}
+#copyright{
+    text-align: center;
+    padding: 1rem 0;
+}
+#copyright p{
+    color: var(--secondary-color);
+}
+#btn-Top{
+    position: fixed;
+    bottom: 20px;               /* Distance depuis le bas */
+    right: 20px;                /* Distance depuis le cote droit */
+    padding: 0 5px;
+    font-size: 2em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--carte-color);
+    transform: translateY(0);
+    transition: transform 1s ease;
+    cursor: pointer;
+}
+#btn-Top:hover{
+    transform: translateY(-10px);
+}
+
+
+/* ========= Page 2 : Programme ======== */
+/* Section Hero */
+#hero-programme{
+    /* padding-top: 5rem; */
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("../images/Amadou_Diallo.jpg");
+    height: 100vh;
+    background-size: cover;
+    /* background-position: center; */
+}
+#hero-titre{
+    text-align: center;
+    /* font-size: 3em; */
+    color: var(--primary-color);
+    padding: 10rem 5rem 0 5rem;
+}
+#hero-titre h1{
+    font-size: 3rem;
+}
+#hero-titre P{
+    padding-top: 2rem;
+    font-size: 2rem;
+    color: var(--carte-color);
+}
+#hero-titre P a{
+    text-decoration: none;
+    color: var(--carte-color);
+    transition: color 0.5s ease;
+}
+#hero-titre P a:hover{
+    color: var(--primary-color);
+}
+
+/* Section programme */
+#programme{
+    padding: 5rem 0;
+
+}
+#programme h2{
+    text-align: center;
+}
+#btn-programme{
+    padding: 3em 0;
+    text-align: center;
+}
+#btn-programme button{
+    padding: 0.7rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--carte-color);
+    border-radius: var(--radius-xl);
+    border: none;
+    margin-right: 1rem;
+    transition: transform 0.5s ease
+}
+#btn-programme button:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--primary-color);
+}
+.jour{
+    color: var(--primary-color);
+}
+#jour1{
+    padding-bottom: 3rem;
+}
+#jour1 h2{
+    padding-bottom: 3rem;
+}
+#jour2{
+    padding-bottom: 3rem;
+}
+#jour2 h2{
+    padding-bottom: 3rem;
+}
+#jour3 h2{
+    padding-bottom: 3rem;
+}
+table{
+    border-collapse: collapse;
+    position: relative;
+    margin-left: 15rem;
+}
+td, th{
+    border: var(--text-color) 1px solid;  
+    padding: 2rem;
+}
+th{
+    background-color: var(--secondary-color);
+}
+
+/* Section THÉMATIQUES */
+#theme{
+    padding: 5rem 0;
+    background-color: var(--secondary-color);
+}
+#titre-theme{
+    text-align: center;
+}
+#titre-theme h2{
+    padding-bottom: 1rem;
+}
+#titre-theme p{
+    margin: 0 23rem;
+    line-height: 1.7rem;
+}
+#theme-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    /*Colonne adaptative*/
+    gap: 5rem;
+    margin-top: 5rem;
+    padding: 0 5rem;
+}
+#theme1{
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    /* margin: 0 6rem; */
+    background-color: var(--carte-color);
+    border: 1.5px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition: transform 0.5s ease ;
+}
+#theme1:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--primary-color);
+}
+
+#theme2{
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    /* margin: 0 6.4rem; */
+    background-color: var(--carte-color);
+    border: 1.5px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition: transform 0.5s ease ;
+}
+#theme2:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--primary-color);
+}
+#theme3{
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    /* margin: 0 6rem; */
+    background-color: var(--carte-color);
+    border: 1.5px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition: transform 0.5s ease ;
+}
+#theme3:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--primary-color);
+}
+#theme4{
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    /* margin: 0 5rem; */
+    background-color: var(--carte-color);
+    border: 1.5px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition: transform 0.5s ease ;
+}
+#theme4:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--primary-color);
+}
+#theme-container i{
+    font-size: 2rem;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    padding: 0.8rem;
+    border-radius: var(--radius-md);
+}
+#theme-container p{
+    line-height: 1.7rem;
+}
+
+
+/* ======== Page 3 : Intervenants ======== */
+/* Section hero */
+#hero-intervenant{
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("../images/Amadou_Diallo.jpg");
+    height: 100vh;
+    background-size: cover;
+}
+#titre-hero-intrvnt{
+    text-align: center;
+    color: var(--primary-color);
+    padding: 10rem 5rem 0 5rem;
+}
+#titre-hero-intrvnt h1{
+    font-size: 3rem;
+}
+#titre-hero-intrvnt p{
+    padding-top: 2rem;
+    font-size: 2rem;
+    color: var(--carte-color);
+}
+#titre-hero-intrvnt P a{
+    text-decoration: none;
+    color: var(--carte-color);
+    transition: color 0.5s ease;
+}
+#titre-hero-intrvnt P a:hover{
+    color: var(--primary-color);
+}
+
+/* Section intervenants */
+#intervenant{
+    padding: 5rem 0;
+}
+#intervenant select{
+    margin-left: 5rem;
+    padding: 0.5rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--carte-color);
+    border-radius: var(--radius-md);
+    border: none;
+    transition: transform 0.5s ease
+}
+#intervenant select:hover{
+    transform: translateY(-10px);
+}
+#profit-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    /*Colonne adaptative*/
+    /* margin: 0 5rem; */
+    gap: 1.5rem;
+    margin: 0 10rem;
+    padding-top: 2rem;
+}
+#profit-container article{
+    text-align: center;
+    background-color: var(--carte-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1.5px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    transition: transform 0.5s ease;
+}
+#profit-container article:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--primary-color);
+}
+#profit-container img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+
+/* ======== Page 4 : Contact ======== */
+/* Section Hero */
+#hero-contact{
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("../images/Amadou_Diallo.jpg");
+    height: 100vh;
+    background-size: cover;
+}
+#titre-hero-contact{
+    text-align: center;
+    color: var(--primary-color);
+    padding: 10rem 5rem 0 5rem;
+}
+#titre-hero-contact h1{
+    font-size: 3rem;
+}
+#titre-hero-contact p{
+    padding-top: 2rem;
+    font-size: 2rem;
+    color: var(--carte-color);
+}
+#titre-hero-contact p a{
+    text-decoration: none;
+    color: var(--carte-color);
+    transition: color 0.5s ease;
+}
+#titre-hero-contact p a:hover{
+    color: var(--primary-color);
+}
+
+/* Section formulaire */
+#formulaire{
+    padding: 5rem;
+}
+#form-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* gap: 2rem; */
+}
+#form{
+    width: 60%;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.div-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+input{
+    height: 2.5rem;
+    padding: 0 1rem;
+    border-radius: var(--radius-md);
+    border: var(--text-color) 1px solid;
+    transition: box-shadow 0.5s ease
+}
+input:focus{
+    outline: none;
+    border: var(--primary-color) 1.5px solid;
+    box-shadow: 0 0px 10px var(--primary-color);
+}
+select{
+    height: 2.5rem;
+    border-radius: var(--radius-md);
+    border: var(--text-color) 1px solid;
+    transition: box-shadow 0.3s ease
+}
+select:focus{
+    outline: none;
+    border: var(--primary-color) 1px solid;
+    border: var(--primary-color) 1.5px solid;
+    box-shadow: 0 0px 10px var(--primary-color);
+}
+label{
+    font-weight: bold;
+}
+textarea{
+    border-radius: var(--radius-md);
+    border: var(--text-color) 1px solid;
+    transition: box-shadow 0.5s ease;
+    padding: 1rem;
+}
+textarea:focus{
+    outline: none;
+    border: var(--primary-color) 1px solid;
+    border: var(--primary-color) 1.5px solid;
+    box-shadow: 0 0px 10px var(--primary-color);
+}
+#btn-form{
+    padding: 1rem;
+    background-color: var(--primary-color);
+    margin-right: 3px;
+    border-radius: var(--radius-xl);
+    border: none;
+    color: var(--carte-color);
+    transition: transform 0.5s ease
+}
+#btn-form:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--primary-color);
+}
+#div-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 5rem;
+}
+#div-contact i{
+    margin-right: 1rem;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    padding: 0.7rem;
+    border-radius: var(--radius-md);
+}
+
+/* Section FAQ */
+#FAQ{
+    padding: 5rem;
+}
+#FAQ h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+
+
+.faq-item{
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+    background-color: var(--card-color);
+    overflow: hidden;
+}
+
+/* Cache le checkbox */
+.faq-item input{
+    display: none;
+}
+
+/* Question */
+.faq-item label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    /* transition: var(--transition-fast); */
+    transition: background-color 0.5s ease
+}
+
+/* Effet au survol */
+.faq-item label:hover{
+    background-color: var(--secondary-color);
+}
+
+/* Réponse (fermée par défaut) */
+.faq-content{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+}
+
+/* Texte de la réponse */
+.faq-content p{
+    padding: 1.2rem 1.2rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Ouverture de l'accordéon */
+.faq-item input:checked ~ .faq-content{
+    max-height: 200px;
+}
+
+/* Section iframe */
+#iframe{
+    padding: 5rem;
+}

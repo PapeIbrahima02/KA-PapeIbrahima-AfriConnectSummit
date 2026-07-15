@@ -5,34 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription & Contact</title>
 
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--Bootstrap icon  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Votre feuille de style personnelle -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <header>
-    <nav>
-        <a href="index.html"><img src="images/logo_AfriTalent-removebg.png" alt="">
-            AfriConnect Summit
-        </a>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="programme.html">programme</a></li>
-            <li><a href="intervenants.html">Intervenants</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button>
-            <i class="bi bi-moon-fill"></i>
-        </button>
-    </nav>
-   </header>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo_AfriTalent-removebg.png" alt="AfriConnect Summit">
+                    <a href="index.html">
+                        AfriConnect Summit
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <button class="btn-dark">
+                <i class="bi bi-moon-fill"></i>
+            </button>
+            <button class="menu-burger">
+                <i class="bi bi-list"></i>
+            </button>
+        </nav>
+    </header>
 
    <!-- Contenu principal -->
     <main>
         <!-- Section Hero -->
-        <section>
-            <div>
+        <section id="hero-contact">
+            <div id="titre-hero-contact">
                 <h1>Inscrivez-vous à AfriConnect Summit 2026</h1>
                 <p>
                     <a href="index.html">Accueil</a> > Contact
@@ -41,62 +53,65 @@
         </section>
 
         <!-- Section FORMULAIRE -->
-        <section>
-            <div>
-                <form action="" method="">
-                    <div class="div-form">
-                        <label for="nom">Nom & Prenom :</label>
-                        <input type="text" id="nom">
-                        <span class="erreur" id="nomPrenomErreur"></span>
-                    </div>
-                    <div class="div-form">
-                        <label for="mail">Mail :</label>
-                        <input type="email" id="mail">
-                        <span class="erreur" id="mailErreur"></span>
-                    </div>
-                    <div class="div-form">
-                        <label for="telephone">Telephone :</label>
-                        <input type="tel" name="telephone" id="telephone">
-                        <span class="erreur" id="telErreur"></span>
-                    </div>
-                    <div class="div-form">
-                        <label for="pays">Pays</label>
-                        <select name="pays" id="pays">
-                            <option value="Senegal">Senegal</option>
-                            <option value="Maroc">Maroc</option>
-                            <option value="Egypte">Egypte</option>
-                            <option value="Nigeria">Nigeria</option>
-                            <option value="Ghana">Ghana</option>
-                            <option value="Congo">RD Congo</option>
-                            <option value="Ethiopie">Ethiopie</option>
-                            <option value="Mali">Mali</option>
-                            <option value="Guinee">Guinee</option>
-                            <option value="Gambie">Gambie</option>
-                            <option value="Cote d'ivoire">Cote d'ivoire</option>
-                            <option value="Rwanda">Rwanda</option>
-                        </select>
-                        <span class="erreur" id="paysErreur"></span>
-                    </div>
-                    <div class="div-form">
-                        <label for="message">Message :</label>
-                        <textarea name="message" id="message" rows="6" cols="35"></textarea>
-                        <span class="erreur" id="messageErreur"></span>
-                    </div>
-                    <button type="submit">Envoyer</button>
-                </form>
-                <div id="confirmation" class="success"></div>
+        <section id="formulaire">
+            <div id="form-container">
+                <div id="form">
+                    <form action="" method="">
+                        <div class="div-form">
+                            <label for="nom">Nom & Prenom :</label>
+                            <input type="text" id="nom" placeholder="Steve JOBS">
+                            <span class="erreur" id="nomPrenomErreur"></span>
+                        </div>
+                        <div class="div-form">
+                            <label for="mail">Mail :</label>
+                            <input type="email" id="mail" placeholder="reuissir@gmail.com">
+                            <span class="erreur" id="mailErreur"></span>
+                        </div>
+                        <div class="div-form">
+                            <label for="telephone">Telephone :</label>
+                            <input type="tel" name="telephone" id="telephone" placeholder="+221 00 000 00 00"> 
+                            <span class="erreur" id="telErreur"></span>
+                        </div>
+                        <div class="div-form">
+                            <label for="pays">Pays</label>
+                            <select name="pays" id="pays">
+                                <OPtion value="">Choisissez un pays</OPtion>
+                                <option value="Senegal">Senegal</option>
+                                <option value="Maroc">Maroc</option>
+                                <option value="Egypte">Egypte</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Congo">RD Congo</option>
+                                <option value="Ethiopie">Ethiopie</option>
+                                <option value="Mali">Mali</option>
+                                <option value="Guinee">Guinee</option>
+                                <option value="Gambie">Gambie</option>
+                                <option value="Cote d'ivoire">Cote d'ivoire</option>
+                                <option value="Rwanda">Rwanda</option>
+                            </select>
+                            <span class="erreur" id="paysErreur"></span>
+                        </div>
+                        <div class="div-form">
+                            <label for="message">Message :</label>
+                            <textarea name="message" id="message" rows="6" cols="35"></textarea>
+                            <span class="erreur" id="messageErreur"></span>
+                        </div>
+                        <button id="btn-form" type="submit">Envoyer</button>
+                    </form>
+                    <div id="confirmation" class="success"></div>
 
-            </div>
-            <div id="div-contact">  
-                <h2>Contact</h2>
-                <p><i class="bi bi-geo-alt"></i>Dakar, Senegal</p>
-                <p><i class="bi bi-telephone"></i>+221 77 171 19 99</p>
-                <p><i class="bi bi-envelope"></i>Contact@saveursdafrique.sn</p>
+                </div>
+                <div id="div-contact">  
+                    <h2>Contact</h2>
+                    <p><i class="bi bi-geo-alt"></i>Dakar, Senegal</p>
+                    <p><i class="bi bi-telephone"></i>+221 77 171 19 99</p>
+                    <p><i class="bi bi-envelope"></i>Contact@saveursdafrique.sn</p>
+                </div>
             </div>
         </section>
 
         <!-- Section FAQ -->
-        <section>
+        <section id="FAQ">
             <h2>FAQ</h2>
 
             <div class="faq-item">
@@ -115,7 +130,7 @@
 
             <div class="faq-item">
                 <input type="checkbox" id="faq2">
-                <label for="faq1">
+                <label for="faq2">
                     La participation à la conférence est-elle payante ?
                 </label>
                 
@@ -129,7 +144,7 @@
 
             <div class="faq-item">
                 <input type="checkbox" id="faq3">
-                <label for="faq1">
+                <label for="faq3">
                     Où se déroulera l'événement ?
                 </label>
                 
@@ -142,7 +157,7 @@
 
             <div class="faq-item">
                 <input type="checkbox" id="faq4">
-                <label for="faq1">
+                <label for="faq4">
                     Qui peut participer à la conférence ?
                 </label>
                 
@@ -156,7 +171,7 @@
 
             <div class="faq-item">
                 <input type="checkbox" id="faq5">
-                <label for="faq1">
+                <label for="faq5">
                     Recevrai-je un certificat de participation ?
                 </label>
                 
@@ -170,7 +185,7 @@
         </section>
 
         <!-- Section iframe -->
-        <section>
+        <section id="iframe">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.5187823338842!2d-17.200932724891157!3d14.739777385763217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec19feb37b00737%3A0xcc39a5adb92c7ea7!2sCentre%20des%20Expositions%20a%20Diamniadio%20(C.I.C.A.D)!5e0!3m2!1sfr!2ssn!4v1783547538819!5m2!1sfr!2ssn" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </section>
 
@@ -179,37 +194,37 @@
 
     <footer>
         <div>
-            <div>
-                <div>
+            <div id="infos">
+                <div id="description">
                     <h3>AfriConnect Summit</h3>
                     <p>AfriConnect Summit est une conférence panafricaine dédiée à l'innovation, au numérique et à l'entrepreneuriat.</p>
                     <img src="images/logo_AfriTalent-removebg.png" alt="">
                 </div>
 
-                <div>
+                <div id="lien">
                     <h3>Liens utiles</h3>
-                    <ul >
+                    <ul>
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="programme.html">Programme</a></li>
                         <li><a href="intervenants.html">Intervenants</a></li>
-                        <li><a href="contact.html">ontact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div>
+                <div id="contact">
                     <h3>Contact</h3>
                     <p>Email : contact@afriSummit.com</p>
                     <p>Tel : +221 77 210 22 99</p>
                 </div>
             </div>
 
-            <div>
+            <div id="reseau">
                 <a href="http://www.facebook.com"><i class="bi bi-facebook"></i></a>
                 <a href="http://www.instagram.com"><i class="bi bi-instagram"></i></a>
                 <a href="http://www.linkedin.com"><i class="bi bi-linkedin"></i></a>
             </div> 
 
-            <div class="text-center py-4">
+            <div id="copyright">
                 <p>&copy; 2026 AfriConnect Summit. Tous droits réservés</p>
             </div>
             <!-- Bouton retour en haut -->
