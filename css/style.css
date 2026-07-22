@@ -4,8 +4,9 @@
     --primary-color:#3A1D6C;        /*Couleur principale*/
     --secondary-color:#E5DCF9;      /*Couleur secondaire*/
     --background-color:#F2EEFC;      /*Couleur de fond*/
-    --carte-color:#FFFFFF;            /*Couleur des cartes*/
+    --card-color:#FFFFFF;            /*Couleur des cartes*/
     --text-color:#1F2937;            /*Couleur paragraphe*/
+    --titre-color: #000000;
     --dark-color:#1E1238;            /*Couleur footer*/
 
     /* TYPOGRAPHIE */
@@ -27,24 +28,25 @@
     --secondary-color:#3C2D63;    
     --background-color:#12101C;   
     --card-color:#1E1830;         
-    --text-color:#F8FAFC;         
+    --text-color:#F8FAFC;   
+    --titre-color: #FFFFFF;      
 }
 
 /* ===== Keyframes animation ===== */
 @keyframes botom{
     from{
-        opacity: 0;
-        transform: translateY(30px);
+        opacity: 0;     /*Invisible au départ*/
+        transform: translateY(30px);    /*Valeur initiale*/
     }
     to{
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0);       /*Valeur finale*/
     }
 }
 
 @keyframes right{
     from{
-        opacity: 0;
+        opacity: 0;     /*Invisible au départ*/
         transform: translateX(30px);
     }
     to{
@@ -65,6 +67,9 @@ body{
 h1, h2, h3{
     font-family: var(--title-font);
 }
+h2, h3, strong{
+    color: var(--titre-color);
+}
 p{
     font-family: var(--text-font);
     color: var(--text-color);
@@ -82,6 +87,11 @@ nav{
     z-index: 999;
     background-color: var(--background-color);
     width: 100%;
+}
+/* Changement de style du navbar au scroll */
+.navbar-scroll{
+    padding: 0 4rem 0.5rem;
+    box-shadow: 0 0px 10px var(--primary-color);
 }
 .logo{
     display: flex;
@@ -124,6 +134,7 @@ nav{
     border-radius: var(--radius-md);
     color: var(--primary-color);
     background-color: var(--secondary-color);
+    border: none;
 }
 .menu-burger{
     /* position: fixed; */
@@ -190,7 +201,7 @@ nav{
 }
 #btn-hero #btn1 a{
     text-decoration: none;
-    color: var(--carte-color);
+    color: var(--card-color);
 }
 #btn-hero #btn2 a{
     text-decoration: none;
@@ -198,7 +209,7 @@ nav{
     transition: color 0.5s ease;
 }
 #btn-hero #btn2 a:hover{
-    color: var(--carte-color);
+    color: var(--card-color);
 }
 #hero-style img{
     width: 100%;
@@ -332,7 +343,7 @@ nav{
 }
 .card-intrvnt{
     text-align: center;
-    background-color: var(--carte-color);
+    background-color: var(--card-color);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -350,9 +361,6 @@ nav{
     width: 100%;
     border-radius: 10px 10px 0 0;
 }
-.card-intrvnt strong{
-    /* color: var(--primary-color); */
-}
 #btn-container{
     display: flex;
     justify-content: center;
@@ -367,7 +375,7 @@ nav{
 }
 #btn-intrvnt a{
     text-decoration: none;
-    color: var(--carte-color);
+    color: var(--card-color);
 }
 #btn-intrvnt:hover{
     padding: 1rem 0.5rem;
@@ -394,7 +402,7 @@ nav{
 #sponsor-or{
     display: flex;
     justify-content: center;
-    gap: var(--gap);
+    gap: 2rem;
 }
 #sponsor-or img{
     width: 23%;
@@ -402,7 +410,7 @@ nav{
 #sponsor-argent{
     display: flex;
     justify-content: center;
-    gap: var(--gap);
+    gap: 2rem
 }
 #sponsor-argent img{
     width: 15%;
@@ -410,10 +418,11 @@ nav{
 #sponsor-bronze{
     display: flex;
     justify-content: center;
-    gap: var(--gap);
+    gap: 2rem;
 }
 #sponsor-bronze img{
     width: 10%;
+    object-fit: cover;
 }
 
 /* Footer */
@@ -433,7 +442,7 @@ footer{
     padding-right: 15rem;
 }
 #description p{
-    color: var(--carte-color);
+    color: var(--card-color);
     line-height: 1.7rem;
     padding-top: 1rem;
 }
@@ -443,7 +452,7 @@ footer{
 }
 #lien ul li a{
     text-decoration: none;
-    color: var(--carte-color);
+    color: var(--card-color);
     transition: color 0.5s ease;
 }
 #lien ul li a:hover{
@@ -453,7 +462,7 @@ footer{
     margin-left: 20rem;
 }
 #contact p{
-    color: var(--carte-color);
+    color: var(--card-color);
     line-height: 1.7rem;
     padding-top: 1rem;
     transition: color 0.5s ease;
@@ -467,7 +476,7 @@ footer{
 #reseau i{
     font-size: 1.5rem;
     color: var(--primary-color);
-    background-color: var(--carte-color);
+    background-color: var(--card-color);
     padding: 5px;
     border-radius: var(--radius-md);
     margin-right: 5px;
@@ -480,6 +489,7 @@ footer{
     color: var(--secondary-color);
 }
 #btn-Top{
+    display: none;
     position: fixed;
     bottom: 20px;               /* Distance depuis le bas */
     right: 20px;                /* Distance depuis le cote droit */
@@ -488,7 +498,7 @@ footer{
     border: none;
     border-radius: 10px;
     background-color: var(--primary-color);
-    color: var(--carte-color);
+    color: var(--card-color);
     transform: translateY(0);
     transition: transform 1s ease;
     cursor: pointer;
@@ -511,7 +521,7 @@ footer{
 }
 
 #hero-titre h1{
-    color: var(--carte-color);
+    color: var(--card-color);
     font-size: 3rem;
     margin-bottom: 1rem;
 }
@@ -523,7 +533,7 @@ footer{
 
 #hero-titre p a{
     text-decoration: none;
-    color: var(--carte-color);
+    color: var(--card-color);
     font-weight: 600;
     transition: color 0.3s ease
 }
@@ -548,7 +558,7 @@ footer{
 #btn-programme button{
     padding: 0.7rem 2rem;
     background-color: var(--primary-color);
-    color: var(--carte-color);
+    color: var(--card-color);
     border-radius: var(--radius-xl);
     border: none;
     margin-right: 1rem;
@@ -589,7 +599,10 @@ td, th{
 }
 th{
     background-color: var(--primary-color);
-    color: var(--carte-color);
+    color: var(--card-color);
+}
+.test{
+    background-color: var(--card-color);
 }
 .colonne{
     background-color: var(--secondary-color);
@@ -624,7 +637,7 @@ th{
     gap: 1rem;
     align-items: center;
     /* margin: 0 6rem; */
-    background-color: var(--carte-color);
+    background-color: var(--card-color);
     border: 1.5px solid var(--primary-color);
     border-radius: var(--radius-md);
     padding: 2rem;
@@ -641,7 +654,7 @@ th{
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    background-color: var(--carte-color);
+    background-color: var(--card-color);
     border: 1.5px solid var(--primary-color);
     border-radius: var(--radius-md);
     padding: 2rem;
@@ -657,7 +670,7 @@ th{
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    background-color: var(--carte-color);
+    background-color: var(--card-color);
     border: 1.5px solid var(--primary-color);
     border-radius: var(--radius-md);
     padding: 2rem;
@@ -673,7 +686,7 @@ th{
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    background-color: var(--carte-color);
+    background-color: var(--card-color);
     border: 1.5px solid var(--primary-color);
     border-radius: var(--radius-md);
     padding: 2rem;
@@ -707,7 +720,7 @@ th{
     padding: 2rem;
 }
 #titre-hero-intrvnt h1{
-    color: var(--carte-color);
+    color: var(--card-color);
     font-size: 3rem;
     margin-bottom: 1rem;
 }
@@ -717,7 +730,7 @@ th{
 }
 #titre-hero-intrvnt P a{
     text-decoration: none;
-    color: var(--carte-color);
+    color: var(--card-color);
     font-weight: 600;
     transition: color 0.3s ease
 }
@@ -733,7 +746,7 @@ th{
     margin-left: 5rem;
     padding: 0.5rem 2rem;
     background-color: var(--primary-color);
-    color: var(--carte-color);
+    color: var(--card-color);
     border-radius: var(--radius-xl);
     border: none;
     transition: transform 0.5s ease
@@ -752,7 +765,7 @@ th{
 }
 #profit-container article{
     text-align: center;
-    background-color: var(--carte-color);
+    background-color: var(--card-color);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -784,7 +797,7 @@ th{
     padding: 2rem 15rem;
 }
 #titre-hero-contact h1{
-    color: var(--carte-color);
+    color: var(--card-color);
     font-size: 3rem;
     margin-bottom: 1rem;
 }
@@ -794,7 +807,7 @@ th{
 }
 #titre-hero-contact p a{
     text-decoration: none;
-    color: var(--carte-color);
+    color: var(--card-color);
     font-weight: 600;
     transition: color 0.3s ease
 }
@@ -835,7 +848,7 @@ input{
     transition: box-shadow 0.5s ease
 }
 input:focus{
-    outline: none;
+    outline: none;      /*Pour enlever la bordure du champ apres clic*/
     border: var(--primary-color) 1.5px solid;
     box-shadow: 0 0px 10px var(--primary-color);
 }
@@ -846,7 +859,7 @@ select{
     transition: box-shadow 0.3s ease
 }
 select:focus{
-    outline: none;
+    outline: none;      /*Pour enlever la bordure du champ apres clic*/
     border: var(--primary-color) 1px solid;
     border: var(--primary-color) 1.5px solid;
     box-shadow: 0 0px 10px var(--primary-color);
@@ -861,7 +874,7 @@ textarea{
     padding: 1rem;
 }
 textarea:focus{
-    outline: none;
+    outline: none;      /*Pour enlever la bordure du champ apres clic*/
     border: var(--primary-color) 1px solid;
     border: var(--primary-color) 1.5px solid;
     box-shadow: 0 0px 10px var(--primary-color);
@@ -872,7 +885,7 @@ textarea:focus{
     margin-right: 3px;
     border-radius: var(--radius-xl);
     border: none;
-    color: var(--carte-color);
+    color: var(--card-color);
     transition: transform 0.5s ease
 }
 #btn-form:hover{
@@ -1005,15 +1018,17 @@ MEDIA QUERIES — Adaptations selon la taille de l'ecran
         gap: 0;
         background: var(--background-color);
         padding: 1rem 0;
-        /* box-shadow: 0 8px 20px rgba(0,0,0,.08); */
     }
     .menu li{
-        text-align: center;
         padding: 0.8rem 0;
     }
     .menu li a{
         display: block;     /*Pour afficher les liens*/
-        width: 100%;
+    }
+
+    /* Activation du menu burger */
+    .menu.nav-active{
+        display: block;
     }
 
     /* Section Hero */
@@ -1200,7 +1215,6 @@ MEDIA QUERIES — Adaptations selon la taille de l'ecran
         gap: 0;
         background: var(--background-color);
         padding: 1rem 0;
-        /* box-shadow: 0 8px 20px rgba(0,0,0,.08); */
     }
     .menu li{
         text-align: center;
@@ -1208,7 +1222,11 @@ MEDIA QUERIES — Adaptations selon la taille de l'ecran
     }
     .menu li a{
         display: block;     /*Pour afficher les liens*/
-        width: 100%;
+    }
+
+    /* Activation du menu burger */
+    .menu.nav-active{
+        display: block;
     }
 
     /* Section Hero */
