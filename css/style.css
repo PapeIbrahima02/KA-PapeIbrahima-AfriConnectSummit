@@ -324,7 +324,7 @@ nav{
 }
 
 /* SECTION INTERVENANTS */
-#intervenant{
+#intervenants{
     padding: 5rem 0;
     background-color: var(--secondary-color);
 }
@@ -741,6 +741,7 @@ th{
 /* Section intervenants */
 #intervenant{
     padding: 5rem 0;
+    /* background-color: var(--secondary-color); */
 }
 #intervenant select{
     margin-left: 5rem;
@@ -941,7 +942,8 @@ textarea:focus{
     color: var(--primary-color);
     cursor: pointer;
     /* transition: var(--transition-fast); */
-    transition: background-color 0.5s ease
+    /* transition: background-color 0.5s ease */
+    background-color: var(--background-color);
 }
 
 /* Effet au survol */
@@ -980,6 +982,32 @@ iframe{
 }
 
 
+/* ===== Animations fade-in, slide-in, zoom-in au scroll ===== */
+.fade-in{
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.fade-in.fade-in-active{
+    opacity: 1;
+}
+.slide-in{
+    opacity: 0;
+    transform: translateY(50px);    /*50px en bas*/
+    transition: all 1s ease;        /*all, toute les propriétés de la section*/
+}
+.slide-in.slide-in-active{
+    opacity: 1;
+    transform: translateY(0);
+}
+.zoom-in{
+    opacity: 0;
+    transform: scale(0.8);      /*réduit l'élément à 80% de sa taille*/
+    transition: all 1s ease;
+}
+.zoom-in.zoom-in-active{
+    opacity: 1;
+    transform: scale(1);        /*1, taille normale 100%*/
+}
 
 /* ===========================================================
 MEDIA QUERIES — Adaptations selon la taille de l'ecran
