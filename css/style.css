@@ -517,7 +517,7 @@ footer{
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem 3rem;
+    padding: 2rem 3.5rem;
 }
 
 #hero-titre h1{
@@ -593,13 +593,15 @@ footer{
 table{
     border-collapse: collapse;
     box-shadow: 0 4px 15px var(--secondary-color);
-}
-td, th{
-    padding: 2rem;
+    color: var(--text-color);
 }
 th{
+    padding: 2rem;
     background-color: var(--primary-color);
     color: var(--card-color);
+}
+td{
+    padding: 1.7rem;
 }
 .test{
     background-color: var(--card-color);
@@ -743,17 +745,36 @@ th{
     padding: 5rem 0;
     /* background-color: var(--secondary-color); */
 }
-#intervenant select{
-    margin-left: 5rem;
-    padding: 0.5rem 2rem;
+#filtre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+#btn{
+    padding: 0.7rem 2rem;
     background-color: var(--primary-color);
     color: var(--card-color);
     border-radius: var(--radius-xl);
     border: none;
-    transition: transform 0.5s ease
+    transition: transform 0.5s ease;
 }
-#intervenant select:hover{
+#btn:hover{
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--primary-color);
+}
+.btn{
+    padding: 0.7rem 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--primary-color);
+    transition: transform 0.5s ease;
+}
+.btn:hover{
+    transform: translateY(-10px);
+    background-color: var(--primary-color);
+    color: var(--card-color);
     box-shadow: 0 15px 30px var(--primary-color);
 }
 #profit-container{
@@ -906,6 +927,21 @@ textarea:focus{
     padding: 0.7rem;
     border-radius: var(--radius-md);
 }
+/* JS, Validation formulaire */
+.erreur{
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.success{
+    color: green;
+    font-size: 1rem;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+
+
 
 /* Section FAQ */
 #FAQ{
